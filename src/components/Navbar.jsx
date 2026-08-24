@@ -1,71 +1,67 @@
-import { ShoppingBag, UserRound } from "lucide-react";
+import { useState } from 'react';
+import { ShoppingBag, User, Menu, X, Plus } from 'lucide-react';
+import Container from './Container';
 
-function Navbar() {
+const navLinks = ['Home', 'New Arrivals', 'Best Selling', 'Reviews'];
+
+const Navbar = () => {
+  const [open, setOpen] = useState(false);
+
   return (
-    <nav className="absolute left-0 right-0 top-0 z-50 px-7 py-6">
-      <div className="mx-auto flex max-w-[1280px] items-center justify-between">
-
-        {/* Logo */}
-        <a
-          href="#"
-          className="flex items-center gap-1.5 text-[12px] font-medium tracking-[0.12em] text-white"
-        >
-          <span className="text-sm">✦</span>
-          LUMINA
-        </a>
-
-        {/* Navigation */}
-        <div className="hidden items-center gap-1 rounded-full border border-white/15 bg-white/10 p-1 backdrop-blur-md md:flex">
-          <a
-            href="#"
-            className="rounded-full bg-white/15 px-4 py-1.5 text-[10px] text-white"
-          >
-            Home
+    <header className="absolute top-0 left-0 w-full z-30">
+      <Container>
+        <nav className="flex items-center justify-between py-6">
+          <a href="#" className="flex items-center gap-1 text-white font-serif text-lg tracking-wide">
+            <Plus size={14} strokeWidth={3} />
+            LUMINA
           </a>
 
-          <a
-            href="#products"
-            className="rounded-full px-4 py-1.5 text-[10px] text-white/70 transition hover:bg-white/10 hover:text-white"
-          >
-            New Arrivals
-          </a>
+          <ul className="hidden md:flex items-center gap-8 text-sm text-white/90">
+            {navLinks.map((link, i) => (
+              <li key={link}>
+                <a
+                  href="#"
+                  className={`hover:text-white transition-colors ${
+                    i === 0 ? 'text-white font-medium border-b border-white/70 pb-1' : ''
+                  }`}
+                >
+                  {link}
+                </a>
+              </li>
+            ))}
+          </ul>
 
-          <a
-            href="#products"
-            className="rounded-full px-4 py-1.5 text-[10px] text-white/70 transition hover:bg-white/10 hover:text-white"
-          >
-            Best Selling
-          </a>
+          <div className="hidden md:flex items-center gap-4">
+            <button className="flex items-center gap-2 text-sm text-white/90 hover:text-white">
+              <ShoppingBag size={16} />
+              My Cart
+              <span className="flex items-center justify-center w-4 h-4 text-[10px] bg-white text-[#E2661F] rounded-full">
+                1
+              </span>
+            </button>
+            <button className="w-9 h-9 flex items-center justify-center rounded-full bg-white/15 hover:bg-white/25 transition-colors">
+              <User size={16} className="text-white" />
+            </button>
+          </div>
 
-          <a
-            href="#reviews"
-            className="rounded-full px-4 py-1.5 text-[10px] text-white/70 transition hover:bg-white/10 hover:text-white"
-          >
-            Reviews
-          </a>
-        </div>
-
-        {/* Right */}
-        <div className="flex items-center gap-2">
-
-          <button className="flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-[10px] text-white backdrop-blur-md">
-            <ShoppingBag size={13} strokeWidth={1.5} />
-
-            My Cart
-
-            <span className="flex h-4 w-4 items-center justify-center rounded-full bg-white text-[8px] text-black">
-              3
-            </span>
+          <button className="md:hidden text-white" onClick={() => setOpen(!open)}>
+            {open ? <X size={22} /> : <Menu size={22} />}
           </button>
+        </nav>
 
-          <button className="flex h-7 w-7 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white backdrop-blur-md">
-            <UserRound size={12} strokeWidth={1.5} />
-          </button>
-
-        </div>
-      </div>
-    </nav>
+        {open && (
+          <div className="md:hidden flex flex-col gap-4 pb-6 text-white">
+            {navLinks.map((link) => (
+              <a key={link} href="#" className="text-sm">{link}</a>
+            ))}
+            <button className="flex items-center gap-2 text-sm">
+              <ShoppingBag size={16} /> My Cart (1)
+            </button>
+          </div>
+        )}
+      </Container>
+    </header>
   );
-}
+};
 
 export default Navbar;
