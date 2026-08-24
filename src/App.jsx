@@ -7,8 +7,7 @@ function App() {
   return (
     <div className="relative font-sans">
       <Navbar />
-      <Hero /
-      {/* teammate's <Radiance /> goes here between Hero and Products, per the mock */}
+      <Hero />
       <ProductShowcase />
       <Routine />
     </div>
