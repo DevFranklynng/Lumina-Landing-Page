@@ -1,8 +1,10 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import Radiance from "./components/Radiance";
 import ProductShowcase from './components/ProductShowcase';
 import Routine from "./components/Routine"
-import Radiance from "./components/Radiance";
+import Testimonial from "./components/Testimonial";
+
 
 function App() {
   return (
@@ -12,6 +14,7 @@ function App() {
       <Radiance />
       <ProductShowcase />
       <Routine />
+      <Testimonial />
     </div>
   );
 }
