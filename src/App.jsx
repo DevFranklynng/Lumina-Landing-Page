@@ -9,9 +9,9 @@ function App() {
     <div className="relative font-sans">
       <Navbar />
       <Hero />
+      <Radiance />
       <ProductShowcase />
       <Routine />
-      <Radiance />
     </div>
   );
 }
