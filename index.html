@@ -27,6 +27,17 @@
       },
     };
   </script>
+
+<style type="text/tailwindcss">
+  @theme {
+    --animate-marquee-track: marquee-track 20s linear infinite;
+
+    @keyframes marquee-track {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+  }
+</style>
 </head>
 
 <body>

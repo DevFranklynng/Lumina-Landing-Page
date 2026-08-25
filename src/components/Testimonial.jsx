@@ -8,7 +8,7 @@ function Testimonials() {
             <section className="bg-[#FBF6F0] py-10 px-6 md:py-16 md:px-10">
                 <div className="mx-auto max-w-7xl">
                     
-                    <h4 className="text-sm text-[#E2661F] mb-2"><span>✦{" "}</span>Loved by the lumina community</h4>
+                    <h4 className="text-sm text-[#E2661F]/60 mb-10"><span>✦{" "}</span>Loved by the lumina community</h4>
 
 
                     <h2 className="max-w-2xl mx-auto font-serif text-4xl leading-tight md:text-6xl text-[#1A1A1A] tracking-wide">
@@ -34,11 +34,11 @@ function Testimonials() {
                                 key={testimonial.id}
                                 className="relative z-10 rounded-[2rem] bg-[#E2661F] p-8 shadow-xl md:p-12 "
                             >
-                                <span className="font-serif text-7xl leading-none md:text-8xl">
+                                <span className="font-serif text-4xl leading-none md:text-6xl">
                                 “
                                 </span>
 
-                                <p className="mt-4 text-xl leading-relaxed md:text-xl">
+                                <p className="text-xl leading-relaxed md:text-xl text-justify">
                                 {testimonial.quote}
                                 </p>
 
@@ -71,8 +71,20 @@ function Testimonials() {
             </section>
 
             <div className="bg-gray-900 py-10 px-6 md:py-16 md:px-10">
-                <div>
-                    <p>UP TO 20% OFF</p>
+                <div className="overflow-hidden whitespace-nowrap">
+                    
+                    <span className="text-5xl text-[#E2661F]">Up TO 20% OFF{"  "}</span>
+                    <span className="text-5xl">Up TO 20% OFF{"  "}</span>
+                    <span className="text-5xl">Up TO 20% OFF{"  "}</span>
+                    
+                </div>
+
+                <div className="overflow-hidden whitespace-nowrap">
+                    
+                    <span className="text-5xl text-[#E2661F]">Up TO 20% OFF{"  "}</span>
+                    <span className="text-5xl">Up TO 20% OFF{"  "}</span>
+                    <span className="text-5xl">Up TO 20% OFF{"  "}</span>
+                    
                 </div>
             </div>
         
