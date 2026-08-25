@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import ProductShowcase from './components/ProductShowcase';
 import Routine from "./components/Routine"
+import Radiance from "./components/Radiance";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Hero />
       <ProductShowcase />
       <Routine />
+      <Radiance />
     </div>
   );
 }
