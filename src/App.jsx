@@ -4,6 +4,7 @@ import Radiance from "./components/Radiance";
 import ProductShowcase from './components/ProductShowcase';
 import Routine from "./components/Routine"
 import Testimonial from "./components/Testimonial";
+import Footer from "./components/Footer";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <ProductShowcase />
       <Routine />
       <Testimonial />
+      <Footer />
     </div>
   );
 }
